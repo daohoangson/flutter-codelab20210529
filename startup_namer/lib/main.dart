@@ -43,15 +43,15 @@ class _RandomWordsState extends State<RandomWords> {
           _suggestions.addAll(tenMore);
         }
 
-        return _buildRow(_suggestions[index]);
+        return _buildRow(index, _suggestions[index]);
       },
     );
   }
 
-  Widget _buildRow(WordPair pair) {
+  Widget _buildRow(int index, WordPair pair) {
     return ListTile(
       title: Text(
-        pair.asPascalCase,
+        '$index. ${pair.asPascalCase}',
         style: TextStyle(fontSize: 20),
       ),
     );
