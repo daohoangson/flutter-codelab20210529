@@ -52,6 +52,7 @@ class _RandomWordsState extends State<RandomWords> {
     return ListTile(
       title: Text(
         pair.asPascalCase,
+        style: TextStyle(fontSize: 20),
       ),
     );
   }
