@@ -31,7 +31,13 @@ class _RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) {
+      itemBuilder: (context, i) {
+        if (i.isOdd) {
+          return Divider();
+        }
+
+        final index = i ~/ 2;
+        // print('i=$i index=$index');
         if (index >= _suggestions.length) {
           final tenMore = generateWordPairs().take(10);
           _suggestions.addAll(tenMore);
